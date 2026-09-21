@@ -1,6 +1,9 @@
 # dtsdt.com
 
-个人网站源码：**Hugo** 静态生成 + **PaperMod** 主题 + **Cloudflare Pages** 托管。
+个人网站源码：**Hugo** 静态生成 + **PaperMod** 主题 + **Cloudflare Pages** 托管，中英双语。
+
+- 中文（默认，根目录）：`content/zh/`
+- 英文（`/en/`）：`content/en/`
 
 线上地址：`https://dtsdt.com`（切域名前临时用 `https://dtsdt.pages.dev`）
 
