@@ -1,62 +1,58 @@
 # ============================================================
-# dtsdt.com —— Hugo + PaperMod 配置
-# 目标：极简、构建神速、SEO 完整、日常维护只改 content/
-# 改完执行 ./deploy.sh  →  构建 + 推到 Cloudflare Pages
+# dtsdt.com —— Hugo + PaperMod 配置（中英双语）
+# 中文在根目录，英文在 /en/。改完执行 ./deploy.sh 上线。
 # ============================================================
 
 baseURL = "https://dtsdt.com/"
 title = "dtsdt.com"
-locale = "zh-CN"
 defaultContentLanguage = "zh-cn"
-hasCJKLanguage = true          # 中文按字计字数，阅读时长才准
+defaultContentLanguageInSubdir = false   # 中文不放进 /zh/，老 URL 才能对上
+hasCJKLanguage = true                    # 中文按字计字数，阅读时长才准
 timeZone = "Asia/Hong_Kong"
 theme = "PaperMod"
 summaryLength = 60
-enableRobotsTXT = true         # 自动生成 robots.txt
+enableRobotsTXT = true
 enableEmoji = true
-enableGitInfo = true           # 用 git 提交时间当 lastmod，利于"更新及时"的 SEO 信号
+enableGitInfo = true           # lastmod 取 git 提交时间，SEO 的"更新及时"
 
 [pagination]
-  pagerSize = 20               # 每页 20 篇
+  pagerSize = 20
 
 [frontmatter]
   lastmod = ["lastmod", ":git", "date", "publishDate"]
   date = ["date", "publishDate", "lastmod"]
 
-[taxonomies]                   # 分类 / 标签 / 系列
+[taxonomies]
   tag = "tags"
   category = "categories"
   series = "series"
 
-[outputs]                      # JSON 给站内搜索用
+[outputs]
   home = ["HTML", "RSS", "JSON"]
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
   term = ["HTML", "RSS"]
 
-# ---------- 站点信息 / SEO ----------
+# ---------- 两种语言共用的外观 / 结构 ----------
 [params]
   env = "production"
-  title = "dtsdt.com"
-  description = "dtsdt 的个人网站：文章、笔记与项目记录。"
-  keywords = ["dtsdt", "博客", "笔记"]
   author = "dtsdt"
   DateFormat = "2006-01-02"
-  defaultTheme = "auto"         # 跟随系统深浅色
+  defaultTheme = "auto"
   disableThemeToggle = false
   mainSections = ["article"]
   ShowReadingTime = true
   ShowWordCount = true
-  ShowToc = true                # 长文自动出目录
+  ShowToc = true
   TocOpen = false
   ShowBreadCrumbs = true
-  ShowPostNavLinks = true       # 上一篇 / 下一篇
+  ShowPostNavLinks = true
   ShowCodeCopyButtons = true
-  ShowShareButtons = false      # 极简：不要社交分享按钮
+  ShowShareButtons = false
   ShowRssButtonInSectionTermList = true
-  ShowFullTextinRSS = true      # RSS 输出全文
+  ShowFullTextinRSS = true
   ShowAllPagesInArchive = true
-  disableSpecial1stPost = true  # 首页第一篇不做特殊放大，版面统一
+  disableSpecial1stPost = true
   disableScrollToTop = false
   hideFooter = false
 
@@ -64,16 +60,11 @@ enableGitInfo = true           # 用 git 提交时间当 lastmod，利于"更新
     favicon = "/favicon.ico"
     disableFingerprinting = false
 
-  [params.schema]               # 结构化数据（Google 富摘要）
+  [params.schema]
     publisherType = "Person"
     sameAs = ["https://github.com/zls0725"]
 
-  # 首页开场白，想改就改这里
-  [params.homeInfoParams]
-    Title = "dtsdt"
-    Content = "这里记录我的文章与笔记。站点已从 Notion 迁到 Hugo：打开更快、SEO 更完整、发文章更省事。"
-
-  [params.fuseOpts]             # 站内搜索（纯前端，无后端）
+  [params.fuseOpts]
     isCaseSensitive = false
     shouldSort = true
     location = 0
@@ -82,37 +73,79 @@ enableGitInfo = true           # 用 git 提交时间当 lastmod，利于"更新
     minMatchCharLength = 2
     keys = ["title", "permalink", "summary", "content"]
 
-# ---------- 导航菜单 ----------
-[[menus.main]]
-  name = "文章"
-  url = "/article/"
-  weight = 10
+# ---------- 语言 ----------
+[languages]
+  # ===== 中文（默认，根目录）=====
+  [languages.zh-cn]
+    locale = "zh-CN"
+    title = "dtsdt.com"
+    contentDir = "content/zh"
+    weight = 1
+    [languages.zh-cn.params]
+      description = "dtsdt 的个人网站：文章、笔记与项目记录。"
+      keywords = ["dtsdt", "博客", "笔记"]
+      [languages.zh-cn.params.homeInfoParams]
+        Title = "dtsdt"
+        Content = "这里记录我的文章与笔记。站点已从 Notion 迁到 Hugo：打开更快、SEO 更完整、发文章更省事。"
+    [[languages.zh-cn.menus.main]]
+      name = "文章"
+      url = "/article/"
+      weight = 10
+    [[languages.zh-cn.menus.main]]
+      name = "归档"
+      url = "/archives/"
+      weight = 20
+    [[languages.zh-cn.menus.main]]
+      name = "标签"
+      url = "/tags/"
+      weight = 30
+    [[languages.zh-cn.menus.main]]
+      name = "搜索"
+      url = "/search/"
+      weight = 40
+    [[languages.zh-cn.menus.main]]
+      name = "关于"
+      url = "/about/"
+      weight = 50
 
-[[menus.main]]
-  name = "归档"
-  url = "/archives/"
-  weight = 20
-
-[[menus.main]]
-  name = "标签"
-  url = "/tags/"
-  weight = 30
-
-[[menus.main]]
-  name = "搜索"
-  url = "/search/"
-  weight = 40
-
-[[menus.main]]
-  name = "关于"
-  url = "/about/"
-  weight = 50
+  # ===== 英文（/en/）=====
+  [languages.en]
+    locale = "en-US"
+    title = "dtsdt.com"
+    contentDir = "content/en"
+    weight = 2
+    [languages.en.params]
+      description = "dtsdt's personal site: articles, notes and project logs."
+      keywords = ["dtsdt", "blog", "notes"]
+      [languages.en.params.homeInfoParams]
+        Title = "dtsdt"
+        Content = "Articles and notes. The site was rebuilt with Hugo: faster pages, complete SEO, simpler publishing."
+    [[languages.en.menus.main]]
+      name = "Articles"
+      url = "/en/article/"
+      weight = 10
+    [[languages.en.menus.main]]
+      name = "Archive"
+      url = "/en/archives/"
+      weight = 20
+    [[languages.en.menus.main]]
+      name = "Tags"
+      url = "/en/tags/"
+      weight = 30
+    [[languages.en.menus.main]]
+      name = "Search"
+      url = "/en/search/"
+      weight = 40
+    [[languages.en.menus.main]]
+      name = "About"
+      url = "/en/about/"
+      weight = 50
 
 # ---------- Markdown / 代码高亮 ----------
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
-      unsafe = true             # 允许正文里直接写 HTML
+      unsafe = true
   [markup.highlight]
     noClasses = false
     codeFences = true

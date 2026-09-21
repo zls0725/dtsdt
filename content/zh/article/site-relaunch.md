@@ -2,6 +2,7 @@
 title: "本站已从 Notion 迁到 Hugo"
 date: 2026-09-21
 draft: false
+translationKey: "site-relaunch"
 description: "dtsdt.com 重新上线：改用 Hugo 静态生成，打开更快、SEO 更完整、写文章更省事。"
 tags: ["Hugo", "建站", "SEO"]
 categories: ["站点日志"]
