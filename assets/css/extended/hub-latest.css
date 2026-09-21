@@ -1,27 +1,67 @@
-/* 首页「本站最新」列表（配合 hub.css 的变量） */
-.hub-latest { margin: 0 0 2rem; }
-.hub-latest-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
+/* 首页「本站最新」：与卡片同一套视觉语言（同圆角、同边框、同悬停） */
+.hub-latest-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr;
+}
+
 .hub-latest-list li {
-  display: flex; align-items: baseline; gap: .75rem;
-  padding: .6rem 0; border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
   min-width: 0;
+  padding: .72rem .95rem;
+  border: 1px solid var(--border);
+  border-radius: var(--hub-radius-sm, 12px);
+  background: transparent;
+  transition: border-color .16s ease, transform .16s ease, background-color .16s ease;
 }
+
+.hub-latest-list li:hover {
+  border-color: var(--hub-accent, #2563eb);
+  transform: translateY(-1px);
+  background: color-mix(in srgb, var(--hub-accent) 5%, transparent);
+}
+
 .hub-latest-list a {
-  flex: 1 1 auto; min-width: 0;
-  color: var(--primary); text-decoration: none; font-weight: 600;
-  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  flex: 1 1 auto;
+  min-width: 0;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: .94rem;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
+
 .hub-latest-list a:hover { color: var(--hub-accent, #2563eb); }
+
 .hub-latest-list time {
-  flex: 0 0 auto; font-size: .8rem; color: var(--secondary);
+  flex: 0 0 auto;
+  font-size: .78rem;
+  color: var(--secondary);
   font-variant-numeric: tabular-nums;
 }
+
 .hub-latest-more {
-  display: inline-block; margin-top: .75rem;
-  font-size: .9rem; color: var(--hub-accent, #2563eb); text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  margin-top: .9rem;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--hub-accent, #2563eb);
+  text-decoration: none;
 }
-.hub-card-in .hub-card-tag { color: var(--hub-accent, #2563eb); border-color: currentColor; }
+
+.hub-latest-more:hover { text-decoration: underline; }
+
 @media (max-width: 600px) {
-  .hub-latest-list li { flex-wrap: wrap; gap: .2rem; }
   .hub-latest-list a { white-space: normal; }
 }

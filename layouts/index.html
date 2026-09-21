@@ -1,19 +1,27 @@
 {{- /* 官网首页：本站内容优先的门户（覆盖主题默认文章列表） */ -}}
 {{- define "main" }}
 {{- $en := eq site.Language.Lang "en" }}
+{{- $posts := where site.RegularPages "Section" "article" }}
+{{- $posts = $posts.ByDate.Reverse }}
 <div class="hub">
+
   <header class="hub-brand">
+    <p class="hub-eyebrow">{{ cond $en "DTSDT · Official site" "DTSDT · 官方网站" }}</p>
     <h1>{{ site.Params.hub.name | default site.Title }}</h1>
     {{- with site.Params.hub.tagline }}
     <p class="hub-tagline">{{ . }}</p>
     {{- end }}
+    <div class="hub-cta">
+      <a class="hub-btn hub-btn-solid" href="{{ "article/" | relLangURL }}">
+        {{ cond $en "Read articles" "浏览文章" }}<span aria-hidden="true">→</span>
+      </a>
+      <a class="hub-btn hub-btn-ghost" href="{{ "about/" | relLangURL }}">{{ cond $en "About this site" "关于本站" }}</a>
+    </div>
   </header>
 
   {{- /* 本站最新文章：直接读本站内容，不依赖外部站点 */ -}}
-  {{- $posts := where site.RegularPages "Section" "article" }}
-  {{- $posts = $posts.ByDate.Reverse }}
   {{- with $posts }}
-  <section class="hub-latest">
+  <section class="hub-sec hub-latest">
     <h2 class="hub-group">{{ cond $en "Latest on this site" "本站最新" }}</h2>
     <ul class="hub-latest-list">
       {{- range first 6 . }}
@@ -29,26 +37,37 @@
   </section>
   {{- end }}
 
-  <nav class="hub-links" aria-label="{{ cond $en "Links" "链接" }}">
-    {{- $prev := "" }}
-    {{- range site.Data.links.items }}
-    {{- $group := cond $en .group_en .group_zh }}
-    {{- with $group }}{{ if ne . $prev }}<h2 class="hub-group">{{ . }}</h2>{{ end }}{{ end }}
-    {{- $prev = $group }}
-    {{- $title := cond $en .label_en .label_zh }}
-    {{- $desc  := cond $en .desc_en  .desc_zh }}
-    {{- $tag   := cond $en .tag_en   .tag }}
-    {{- $href  := cond .external .url (.url | relLangURL) }}
-    <a class="hub-card{{ if not .external }} hub-card-in{{ end }}" href="{{ $href }}"{{ if .external }} target="_blank" rel="noopener noreferrer"{{ end }}>
-      <span class="hub-card-head">
-        <span class="hub-card-title">{{ $title }}</span>
-        {{- with $tag }}<span class="hub-card-tag">{{ . }}</span>{{ end }}
-      </span>
-      {{- with $desc }}<span class="hub-card-desc">{{ . }}</span>{{ end }}
-      <span class="hub-card-arrow" aria-hidden="true">→</span>
-    </a>
-    {{- end }}
-  </nav>
+  {{- /* 链接分组：每个分组一个独立栅格，结构更清晰 */ -}}
+  {{- $items := site.Data.links.items }}
+  {{- $groups := slice }}
+  {{- range $items }}
+    {{- $g := cond $en .group_en .group_zh }}
+    {{- if and $g (not (in $groups $g)) }}{{ $groups = $groups | append $g }}{{ end }}
+  {{- end }}
+  {{- range $groups }}
+    {{- $g := . }}
+    <section class="hub-sec">
+      <h2 class="hub-group">{{ $g }}</h2>
+      <div class="hub-links">
+        {{- range $items }}
+        {{- if eq (cond $en .group_en .group_zh) $g }}
+        {{- $title := cond $en .label_en .label_zh }}
+        {{- $desc  := cond $en .desc_en  .desc_zh }}
+        {{- $tag   := cond $en .tag_en   .tag }}
+        {{- $href  := cond .external .url (.url | relLangURL) }}
+        <a class="hub-card{{ if not .external }} hub-card-in{{ end }}" href="{{ $href }}"{{ if .external }} target="_blank" rel="noopener noreferrer"{{ end }}>
+          <span class="hub-card-head">
+            <span class="hub-card-title">{{ $title }}</span>
+            {{- with $tag }}<span class="hub-card-tag">{{ . }}</span>{{ end }}
+          </span>
+          {{- with $desc }}<span class="hub-card-desc">{{ . }}</span>{{ end }}
+          <span class="hub-card-arrow" aria-hidden="true">→</span>
+        </a>
+        {{- end }}
+        {{- end }}
+      </div>
+    </section>
+  {{- end }}
 
   {{- with .Content }}
   <div class="hub-note md-content">{{ . }}</div>

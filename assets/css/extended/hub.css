@@ -1,10 +1,26 @@
-/* =========================================
-   官网首页（极简链接门户）
-   只加样式，不改主题；与 hkhenry.com 同一品牌蓝
-   ========================================= */
+/* =========================================================
+   dtsdt 官网首页 · 设计系统
+   参考顶级极简站点（Linear / Vercel / Raycast）：
+   统一栅格、统一圆角与边框、克制的强调色、大留白、细字重
+   只加样式，不改主题本体
+   ========================================================= */
 
-:root { --hub-accent: #2563eb; }
-:root[data-theme="dark"] { --hub-accent: #60a5fa; }
+:root {
+  --hub-accent: #2563eb;
+  --hub-accent-soft: color-mix(in srgb, var(--hub-accent) 12%, transparent);
+  --hub-ring: 0 0 0 3px color-mix(in srgb, var(--hub-accent) 20%, transparent);
+  --hub-card-bg: color-mix(in srgb, var(--entry) 92%, var(--hub-accent) 8%);
+  --hub-radius: 16px;
+  --hub-radius-sm: 12px;
+  --hub-gap: 14px;
+  --hub-shadow: 0 1px 2px rgba(0, 0, 0, .04), 0 8px 24px rgba(0, 0, 0, .06);
+  --hub-shadow-dark: 0 1px 2px rgba(0, 0, 0, .5), 0 10px 30px rgba(0, 0, 0, .35);
+}
+
+:root[data-theme="dark"] {
+  --hub-accent: #7aa2ff;
+  --hub-card-bg: color-mix(in srgb, var(--entry) 94%, var(--hub-accent) 6%);
+}
 
 /* 首页自身绝不允许横向溢出（手机端尤其要稳） */
 .hub,
@@ -12,37 +28,138 @@
 
 body:has(.hub) { overflow-x: clip; }
 
+/* 首页允许比主题默认 720px 更宽的栅格（顶级站点式的大容器） */
+body:has(.hub) .main {
+  max-width: calc(1120px + 2 * var(--gap, 24px));
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* ---------- 容器：统一 1040px 栅格 ---------- */
 .hub {
   width: 100%;
   max-width: 680px;
   margin: 0 auto;
-  padding: 4px 20px 72px;
+  padding: 0 20px 72px;
 }
 
+/* ---------- 顶部品牌区 ---------- */
 .hub-brand {
-  padding: 18px 0 22px;
+  position: relative;
+  padding: 34px 0 30px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 30px;
+}
+
+.hub-brand::after {
+  content: "";
+  position: absolute;
+  inset: -40px -30% auto -30%;
+  height: 220px;
+  background: radial-gradient(50% 60% at 30% 20%, color-mix(in srgb, var(--hub-accent) 14%, transparent), transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hub-eyebrow {
+  margin: 0 0 14px;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--hub-accent);
 }
 
 .hub-brand h1 {
-  margin: 0 0 10px;
-  font-size: clamp(1.7rem, 6vw, 2.4rem);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  margin: 0 0 14px;
+  font-size: clamp(2rem, 6.5vw, 3.1rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -.035em;
   overflow-wrap: anywhere;
 }
 
 .hub-tagline {
   margin: 0;
-  max-width: 42em;
+  max-width: 34em;
   color: var(--secondary);
-  font-size: 1rem;
-  line-height: 1.65;
+  font-size: 1.02rem;
+  line-height: 1.7;
   overflow-wrap: anywhere;
 }
 
+/* ---------- 统一按钮 ---------- */
+.hub-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.hub-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .58rem 1.05rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: .92rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform .15s ease, background-color .15s ease, border-color .15s ease, color .15s ease;
+}
+
+.hub-btn-solid {
+  background: var(--hub-accent);
+  color: #fff;
+}
+
+.hub-btn-solid:hover { transform: translateY(-1px); }
+
+.hub-btn-ghost {
+  border-color: var(--border);
+  color: var(--primary);
+  background: transparent;
+}
+
+.hub-btn-ghost:hover {
+  border-color: var(--hub-accent);
+  color: var(--hub-accent);
+}
+
+.hub-btn:focus-visible,
+.hub-card:focus-visible,
+.hub-latest-list a:focus-visible {
+  outline: none;
+  box-shadow: var(--hub-ring);
+}
+
+/* ---------- 分区标题：统一的「小标签 + 细线」 ---------- */
+.hub-sec { margin: 0 0 34px; }
+
+.hub-group {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin: 0 0 14px;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--secondary);
+}
+
+.hub-group::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ---------- 卡片栅格 ---------- */
 .hub-links {
   display: grid;
-  gap: 10px;
+  gap: var(--hub-gap);
   grid-template-columns: 1fr;
 }
 
@@ -50,21 +167,24 @@ body:has(.hub) { overflow-x: clip; }
   position: relative;
   display: block;
   width: 100%;
-  padding: 15px 46px 15px 18px;
+  padding: 16px 46px 16px 18px;
   border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--entry);
+  border-radius: var(--hub-radius);
+  background: var(--hub-card-bg);
   color: var(--primary);
   text-decoration: none;
-  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease, background-color .16s ease;
 }
 
 .hub-card:hover,
 .hub-card:focus-visible {
   border-color: var(--hub-accent);
-  transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+  transform: translateY(-2px);
+  box-shadow: var(--hub-shadow);
 }
+
+:root[data-theme="dark"] .hub-card:hover,
+:root[data-theme="dark"] .hub-card:focus-visible { box-shadow: var(--hub-shadow-dark); }
 
 .hub-card-head {
   display: flex;
@@ -74,26 +194,28 @@ body:has(.hub) { overflow-x: clip; }
 }
 
 .hub-card-title {
-  font-size: 1.03rem;
+  font-size: 1.02rem;
   font-weight: 600;
+  letter-spacing: -.01em;
 }
 
 .hub-card-tag {
-  padding: 1px 7px;
-  border-radius: 6px;
-  font-size: 0.72rem;
-  line-height: 1.6;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: .7rem;
+  font-weight: 500;
+  line-height: 1.7;
   color: var(--hub-accent);
-  background: color-mix(in srgb, var(--hub-accent) 12%, transparent);
+  background: var(--hub-accent-soft);
   white-space: nowrap;
 }
 
 .hub-card-desc {
   display: block;
-  margin-top: 3px;
+  margin-top: 4px;
   color: var(--secondary);
-  font-size: 0.9rem;
-  line-height: 1.5;
+  font-size: .88rem;
+  line-height: 1.55;
 }
 
 .hub-card-arrow {
@@ -102,31 +224,36 @@ body:has(.hub) { overflow-x: clip; }
   right: 18px;
   transform: translateY(-50%);
   color: var(--hub-accent);
-  font-size: 1.05rem;
-  opacity: 0.55;
-  transition: opacity 0.15s ease, transform 0.15s ease;
+  font-size: 1rem;
+  opacity: .45;
+  transition: opacity .16s ease, transform .16s ease;
 }
 
 .hub-card:hover .hub-card-arrow {
   opacity: 1;
-  transform: translateY(-50%) translateX(2px);
+  transform: translateY(-50%) translateX(3px);
 }
+
+/* 站内卡片：左侧一条强调色细边，和外链区分开（统一元素之一） */
+.hub-card-in { border-left: 2px solid color-mix(in srgb, var(--hub-accent) 45%, var(--border)); }
 
 .hub-note {
-  margin-top: 26px;
+  margin: 0 0 30px;
   color: var(--secondary);
-  font-size: 0.92rem;
+  font-size: .92rem;
 }
 
+/* ---------- 页脚 ---------- */
 .hub-foot {
-  margin-top: 34px;
-  padding-top: 16px;
+  margin-top: 40px;
+  padding-top: 18px;
   border-top: 1px solid var(--border);
   color: var(--secondary);
-  font-size: 0.85rem;
+  font-size: .82rem;
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .hub-foot a {
@@ -140,22 +267,23 @@ body:has(.hub) { overflow-x: clip; }
   border-bottom-color: var(--hub-accent);
 }
 
-.hub-dot { opacity: 0.5; }
+.hub-dot { opacity: .45; }
 
-/* 桌面：两列排布，避免一行一张卡显得空旷 */
+/* ---------- 桌面：更宽的栅格 ---------- */
 @media (min-width: 900px) {
-  .hub { max-width: 980px; padding-bottom: 84px; }
-  .hub-brand { padding-bottom: 26px; }
-  .hub-links { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .hub { max-width: 1040px; padding-bottom: 84px; }
+  .hub-brand { padding: 46px 0 34px; }
+  .hub-links { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+  .hub-latest-list { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 480px) {
   .hub { padding: 0 16px 56px; }
-  .hub-card { padding: 14px 40px 14px 15px; }
-  .hub-brand h1 { font-size: 1.7rem; }
+  .hub-card { padding: 15px 42px 15px 16px; }
+  .hub-brand { padding-top: 26px; }
 }
 
-/* 窄屏不让顶部导航溢出去（PaperMod 默认菜单不换行） */
+/* ---------- 窄屏顶部导航换行（PaperMod 默认菜单不换行，会横向溢出） ---------- */
 @media (max-width: 760px) {
   #menu { flex-wrap: wrap; }
   #menu a span { font-size: 0.9rem; }
