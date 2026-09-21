@@ -1,8 +1,8 @@
 ---
 title: "3分钟开通香港众安银行账户赢开户礼"
-slug: "open-hongkong-zhongan-bank-account-win-rewards?theme=starter"
+slug: "open-hongkong-zhongan-bank-account-win-rewards"
 summary: "众安是个新兴的数字银行，用户不再需要到银行分行排队，只需几分钟即可完成开户程序。在开通香港线下银行的间隙即可申请众安银行账户"
-source_url: "https://blog.dtsdt.com/article/open-hongkong-zhongan-bank-account-win-rewards?theme=starter"
+source_url: "https://blog.dtsdt.com/article/open-hongkong-zhongan-bank-account-win-rewards"
 recovered_from: wayback-machine
 ---
 

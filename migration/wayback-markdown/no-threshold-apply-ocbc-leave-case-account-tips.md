@@ -1,5 +1,6 @@
 ---
 title: "0门槛申请新加坡华侨银行离案账户攻略"
+date: 2024-08-26
 slug: "no-threshold-apply-ocbc-leave-case-account-tips"
 summary: "0门槛申请新加坡华侨银行账户2024|新加坡华侨银行账户|手机申请海外账户|全套国内资料|有实体卡|低成本|新加坡第二大银行|360账户|OCBC多币种账户"
 source_url: "https://blog.dtsdt.com/article/no-threshold-apply-ocbc-leave-case-account-tips"

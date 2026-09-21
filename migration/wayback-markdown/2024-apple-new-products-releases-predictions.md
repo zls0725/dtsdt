@@ -1,5 +1,6 @@
 ---
 title: "2024下半年苹果所有新品发布重大更新预告"
+date: 2024-08-15
 slug: "2024-apple-new-products-releases-predictions"
 summary: "一年一度的苹果春晚即将到来，看看日历距离9月份的日期已经逐渐逼近。那么围绕苹果新品更新了哪些产品？哪些功能？大家是否有所期待？而你最关心的功能又是什么？"
 source_url: "https://blog.dtsdt.com/article/2024-apple-new-products-releases-predictions"

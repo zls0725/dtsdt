@@ -1,5 +1,6 @@
 ---
 title: "IPV4、ip地址、子网掩码、路由器、DNS服务器、搜索域，这些上网参数你都知道么"
+date: 2024-08-15
 slug: "ip-address-dns-tcp"
 summary: "mac以太网上的IPV4，ip地址，子网掩码，路由器，DNS服务器，搜索域，等等要上网设置的详细参数都是什么意思？各个用途功能又是什么？"
 source_url: "https://blog.dtsdt.com/article/ip-address-dns-tcp"

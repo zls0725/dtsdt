@@ -1,5 +1,6 @@
 ---
 title: "香港银行BANK CODE、SWIFT CODE及汇款所需资料汇总"
+date: 2024-08-13
 slug: "bank-swift-code"
 summary: "国际转账可没有国内转账那么简单一个账户就可以，还要知道相应的银行代码、swift代码才可以顺利转账，以下是香港银行代码，swift代码列表"
 source_url: "https://blog.dtsdt.com/article/bank-swift-code"

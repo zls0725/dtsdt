@@ -1,5 +1,6 @@
 ---
 title: "如何在GitHub上建立一个资源共享的仓库"
+date: 2024-08-11
 slug: "gitHub-build-repository"
 summary: "在 GitHub 上建立一个资源共享仓库（如共享书籍、软件）需要从多个角度进行规划和实施，以确保其长期发展潜力。以下是思路方法。"
 source_url: "https://blog.dtsdt.com/article/gitHub-build-repository"

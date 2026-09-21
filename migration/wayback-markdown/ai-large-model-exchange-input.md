@@ -1,5 +1,6 @@
 ---
 title: "在与人工智能大模型协同工作解决问题的时候，做好哪些可以赋能人工智能让内容输出更加高效完美"
+date: 2024-08-12
 slug: "ai-large-model-exchange-input"
 summary: "为了使内容输出更加优秀、生动、灵动，同时补充完善可能存在的不足，以下是详细说明你需要关注的方面和需要完成的主要工作。"
 source_url: "https://blog.dtsdt.com/article/ai-large-model-exchange-input"

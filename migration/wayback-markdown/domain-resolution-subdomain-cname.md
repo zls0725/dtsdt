@@ -1,5 +1,6 @@
 ---
 title: "域名解析子域名A和CNAME"
+date: 2024-08-06
 slug: "domain-resolution-subdomain-cname"
 summary: "要将一个主域名（如example.com）添加到域名（如sub.example.com），你可以按照以下步骤进行操作："
 source_url: "https://blog.dtsdt.com/article/domain-resolution-subdomain-cname"

@@ -1,5 +1,6 @@
 ---
 title: "GitHub仓库README.md 的基本结构命名规范"
+date: 2024-08-11
 slug: "github-readme-norm"
 summary: "撰写高质量的README.md文档是维护和推广GitHub仓库的重要环节。良好的README.md不仅帮助用户快速理解仓库的内容和用途，还能提升仓库的专业性和吸引力。"
 source_url: "https://blog.dtsdt.com/article/github-readme-norm"

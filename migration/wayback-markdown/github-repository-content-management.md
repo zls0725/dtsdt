@@ -1,5 +1,6 @@
 ---
 title: "Github仓库内容管理"
+date: 2024-08-11
 slug: "github-repository-content-management"
 summary: "在GitHub上建立并管理一个资源共享的仓库（如书籍、软件）时，仓库的内容管理至关重要。"
 source_url: "https://blog.dtsdt.com/article/github-repository-content-management"

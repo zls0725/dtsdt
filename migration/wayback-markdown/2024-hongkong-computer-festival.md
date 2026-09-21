@@ -1,5 +1,6 @@
 ---
 title: "2024香港电脑通讯节详情优惠攻略"
+date: 2024-08-20
 slug: "2024-hongkong-computer-festival"
 summary: "2024年香港电脑节以人工智能为核心主题，与往届相比，2024年香港电脑节更加关注前沿科技的展示和实际应用"
 source_url: "https://blog.dtsdt.com/article/2024-hongkong-computer-festival"

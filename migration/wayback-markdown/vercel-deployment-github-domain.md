@@ -1,5 +1,6 @@
 ---
 title: "vercel安裝部署Github項目添加自己域名"
+date: 2024-08-09
 slug: "vercel-deployment-github-domain"
 summary: "作為網站的運營推廣那麼一個自有域名是十分重要的，下來教你如何連結自有域名I"
 source_url: "https://blog.dtsdt.com/article/vercel-deployment-github-domain"

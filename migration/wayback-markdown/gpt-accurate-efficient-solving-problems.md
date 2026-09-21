@@ -1,5 +1,6 @@
 ---
 title: "如何與ChatGPT准确、高效、詳細，完成度高的沟通？以帮助我们更好的解决问题，执行方案。"
+date: 2024-08-12
 slug: "gpt-accurate-efficient-solving-problems"
 summary: "这个流程分为三个主要部分：提问与任务描述、结果反馈与评估、继续完善与补充。"
 source_url: "https://blog.dtsdt.com/article/gpt-accurate-efficient-solving-problems"
