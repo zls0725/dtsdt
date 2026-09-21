@@ -44,7 +44,7 @@ enableGitInfo = true           # 用 git 提交时间当 lastmod，利于"更新
   DateFormat = "2006-01-02"
   defaultTheme = "auto"         # 跟随系统深浅色
   disableThemeToggle = false
-  mainSections = ["posts"]
+  mainSections = ["article"]
   ShowReadingTime = true
   ShowWordCount = true
   ShowToc = true                # 长文自动出目录
@@ -85,7 +85,7 @@ enableGitInfo = true           # 用 git 提交时间当 lastmod，利于"更新
 # ---------- 导航菜单 ----------
 [[menus.main]]
   name = "文章"
-  url = "/posts/"
+  url = "/article/"
   weight = 10
 
 [[menus.main]]
