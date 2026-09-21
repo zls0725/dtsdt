@@ -1,0 +1,127 @@
+# ============================================================
+# dtsdt.com —— Hugo + PaperMod 配置
+# 目标：极简、构建神速、SEO 完整、日常维护只改 content/
+# 改完执行 ./deploy.sh  →  构建 + 推到 Cloudflare Pages
+# ============================================================
+
+baseURL = "https://dtsdt.com/"
+title = "dtsdt.com"
+locale = "zh-CN"
+defaultContentLanguage = "zh-cn"
+hasCJKLanguage = true          # 中文按字计字数，阅读时长才准
+timeZone = "Asia/Hong_Kong"
+theme = "PaperMod"
+summaryLength = 60
+enableRobotsTXT = true         # 自动生成 robots.txt
+enableEmoji = true
+enableGitInfo = true           # 用 git 提交时间当 lastmod，利于"更新及时"的 SEO 信号
+
+[pagination]
+  pagerSize = 20               # 每页 20 篇
+
+[frontmatter]
+  lastmod = ["lastmod", ":git", "date", "publishDate"]
+  date = ["date", "publishDate", "lastmod"]
+
+[taxonomies]                   # 分类 / 标签 / 系列
+  tag = "tags"
+  category = "categories"
+  series = "series"
+
+[outputs]                      # JSON 给站内搜索用
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  term = ["HTML", "RSS"]
+
+# ---------- 站点信息 / SEO ----------
+[params]
+  env = "production"
+  title = "dtsdt.com"
+  description = "dtsdt 的个人网站：文章、笔记与项目记录。"
+  keywords = ["dtsdt", "博客", "笔记"]
+  author = "dtsdt"
+  DateFormat = "2006-01-02"
+  defaultTheme = "auto"         # 跟随系统深浅色
+  disableThemeToggle = false
+  mainSections = ["posts"]
+  ShowReadingTime = true
+  ShowWordCount = true
+  ShowToc = true                # 长文自动出目录
+  TocOpen = false
+  ShowBreadCrumbs = true
+  ShowPostNavLinks = true       # 上一篇 / 下一篇
+  ShowCodeCopyButtons = true
+  ShowShareButtons = false      # 极简：不要社交分享按钮
+  ShowRssButtonInSectionTermList = true
+  ShowFullTextinRSS = true      # RSS 输出全文
+  ShowAllPagesInArchive = true
+  disableSpecial1stPost = true  # 首页第一篇不做特殊放大，版面统一
+  disableScrollToTop = false
+  hideFooter = false
+
+  [params.assets]
+    favicon = "/favicon.ico"
+    disableFingerprinting = false
+
+  [params.schema]               # 结构化数据（Google 富摘要）
+    publisherType = "Person"
+    sameAs = ["https://github.com/zls0725"]
+
+  # 首页开场白，想改就改这里
+  [params.homeInfoParams]
+    Title = "dtsdt"
+    Content = "这里记录我的文章与笔记。站点已从 Notion 迁到 Hugo：打开更快、SEO 更完整、发文章更省事。"
+
+  [params.fuseOpts]             # 站内搜索（纯前端，无后端）
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 200
+    threshold = 0.3
+    minMatchCharLength = 2
+    keys = ["title", "permalink", "summary", "content"]
+
+# ---------- 导航菜单 ----------
+[[menus.main]]
+  name = "文章"
+  url = "/posts/"
+  weight = 10
+
+[[menus.main]]
+  name = "归档"
+  url = "/archives/"
+  weight = 20
+
+[[menus.main]]
+  name = "标签"
+  url = "/tags/"
+  weight = 30
+
+[[menus.main]]
+  name = "搜索"
+  url = "/search/"
+  weight = 40
+
+[[menus.main]]
+  name = "关于"
+  url = "/about/"
+  weight = 50
+
+# ---------- Markdown / 代码高亮 ----------
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true             # 允许正文里直接写 HTML
+  [markup.highlight]
+    noClasses = false
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    anchorLineNos = false
+
+# ---------- 站点地图 ----------
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
