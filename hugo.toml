@@ -87,6 +87,9 @@ enableGitInfo = true           # lastmod 取 git 提交时间，SEO 的"更新�
       [languages.zh-cn.params.homeInfoParams]
         Title = "dtsdt"
         Content = "这里记录我的文章与笔记。站点已从 Notion 迁到 Hugo：打开更快、SEO 更完整、发文章更省事。"
+      [languages.zh-cn.params.hub]
+        name = "香港 Henry"
+        tagline = "聊金融 · 玩科技 · 观全球 · 享自由。这里是我的官网入口，内容都在下面这些地方。"
     [[languages.zh-cn.menus.main]]
       name = "文章"
       url = "/article/"
@@ -120,6 +123,9 @@ enableGitInfo = true           # lastmod 取 git 提交时间，SEO 的"更新�
       [languages.en.params.homeInfoParams]
         Title = "dtsdt"
         Content = "Articles and notes. The site was rebuilt with Hugo: faster pages, complete SEO, simpler publishing."
+      [languages.en.params.hub]
+        name = "Hong Kong Henry"
+        tagline = "Finance · Tech · Global · Freedom. This is my official hub — everything lives in the links below."
     [[languages.en.menus.main]]
       name = "Articles"
       url = "/en/article/"

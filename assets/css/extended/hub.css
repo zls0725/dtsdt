@@ -1,0 +1,135 @@
+/* =========================================
+   官网首页（极简链接门户）
+   只加样式，不改主题；与 hkhenry.com 同一品牌蓝
+   ========================================= */
+
+:root { --hub-accent: #2563eb; }
+:root[data-theme="dark"] { --hub-accent: #60a5fa; }
+
+.hub {
+  max-width: 660px;
+  margin: 0 auto;
+  padding: 4px 20px 72px;
+}
+
+.hub-brand {
+  padding: 18px 0 26px;
+}
+
+.hub-brand h1 {
+  margin: 0 0 10px;
+  font-size: clamp(1.85rem, 6vw, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.hub-tagline {
+  margin: 0;
+  color: var(--secondary);
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
+.hub-links {
+  display: grid;
+  gap: 10px;
+}
+
+.hub-card {
+  position: relative;
+  display: block;
+  padding: 15px 46px 15px 18px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--entry);
+  color: var(--primary);
+  text-decoration: none;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.hub-card:hover,
+.hub-card:focus-visible {
+  border-color: var(--hub-accent);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+.hub-card-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.hub-card-title {
+  font-size: 1.03rem;
+  font-weight: 600;
+}
+
+.hub-card-tag {
+  padding: 1px 7px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  line-height: 1.6;
+  color: var(--hub-accent);
+  background: color-mix(in srgb, var(--hub-accent) 12%, transparent);
+}
+
+.hub-card-desc {
+  display: block;
+  margin-top: 3px;
+  color: var(--secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.hub-card-arrow {
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  transform: translateY(-50%);
+  color: var(--hub-accent);
+  font-size: 1.05rem;
+  opacity: 0.55;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.hub-card:hover .hub-card-arrow {
+  opacity: 1;
+  transform: translateY(-50%) translateX(2px);
+}
+
+.hub-note {
+  margin-top: 26px;
+  color: var(--secondary);
+  font-size: 0.92rem;
+}
+
+.hub-foot {
+  margin-top: 34px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  color: var(--secondary);
+  font-size: 0.85rem;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.hub-foot a {
+  color: var(--secondary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.hub-foot a:hover {
+  color: var(--hub-accent);
+  border-bottom-color: var(--hub-accent);
+}
+
+.hub-dot { opacity: 0.5; }
+
+@media (max-width: 480px) {
+  .hub { padding: 0 16px 56px; }
+  .hub-card { padding: 14px 40px 14px 15px; }
+}

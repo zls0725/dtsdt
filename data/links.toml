@@ -1,0 +1,75 @@
+# =========================================
+# 官网首页的链接卡片
+# 顺序即显示顺序；增减条目只改这个文件
+# zh 用 label_zh / desc_zh / tag，英文站用 *_en
+# =========================================
+
+[[items]]
+  url = "https://hkhenry.com/"
+  label_zh = "香港 Henry 主站"
+  label_en = "Hong Kong Henry"
+  desc_zh = "聊金融 · 玩科技 · 观全球 · 享自由"
+  desc_en = "Finance · Tech · Global · Freedom"
+  tag = "主站"
+  tag_en = "Main"
+  external = true
+
+[[items]]
+  url = "https://hkhenry.com/posts/"
+  label_zh = "全部文章"
+  label_en = "All posts"
+  desc_zh = "海外账户 · 财富投资 · 工具技术"
+  desc_en = "Accounts · Investing · Tools"
+  tag = "文章"
+  tag_en = "Blog"
+  external = true
+
+[[items]]
+  url = "https://hkhenry.com/archives/"
+  label_zh = "时间线"
+  label_en = "Timeline"
+  desc_zh = "按时间翻历史内容"
+  desc_en = "Browse by date"
+  tag = "归档"
+  tag_en = "Archive"
+  external = true
+
+[[items]]
+  url = "https://www.youtube.com/@hkhenry21"
+  label_zh = "YouTube 频道"
+  label_en = "YouTube"
+  desc_zh = "视频版内容"
+  desc_en = "Video content"
+  tag = "视频"
+  tag_en = "Video"
+  external = true
+
+[[items]]
+  url = "https://t.me/hkhenry21"
+  label_zh = "Telegram 频道"
+  label_en = "Telegram"
+  desc_zh = "交流与更新"
+  desc_en = "Community & updates"
+  tag = "社群"
+  tag_en = "Chat"
+  external = true
+
+[[items]]
+  url = "https://x.com/hkhenry21"
+  label_zh = "X（推特）"
+  label_en = "X (Twitter)"
+  desc_zh = "即时动态"
+  desc_en = "Short updates"
+  tag = "动态"
+  tag_en = "Feed"
+  external = true
+
+[[items]]
+  url = "https://hkhenry.com/about/"
+  label_zh = "关于与联系"
+  label_en = "About & contact"
+  desc_zh = "背景介绍与联系方式"
+  desc_en = "Background and contact"
+  tag = "关于"
+  tag_en = "About"
+  external = true
