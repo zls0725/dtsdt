@@ -6,38 +6,50 @@
 :root { --hub-accent: #2563eb; }
 :root[data-theme="dark"] { --hub-accent: #60a5fa; }
 
+/* 首页自身绝不允许横向溢出（手机端尤其要稳） */
+.hub,
+.hub * { box-sizing: border-box; min-width: 0; }
+
+body:has(.hub) { overflow-x: clip; }
+
 .hub {
-  max-width: 660px;
+  width: 100%;
+  max-width: 680px;
   margin: 0 auto;
   padding: 4px 20px 72px;
 }
 
 .hub-brand {
-  padding: 18px 0 26px;
+  padding: 18px 0 22px;
 }
 
 .hub-brand h1 {
   margin: 0 0 10px;
-  font-size: clamp(1.85rem, 6vw, 2.5rem);
+  font-size: clamp(1.7rem, 6vw, 2.4rem);
   line-height: 1.15;
   letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
 }
 
 .hub-tagline {
   margin: 0;
+  max-width: 42em;
   color: var(--secondary);
-  font-size: 1.02rem;
+  font-size: 1rem;
   line-height: 1.65;
+  overflow-wrap: anywhere;
 }
 
 .hub-links {
   display: grid;
   gap: 10px;
+  grid-template-columns: 1fr;
 }
 
 .hub-card {
   position: relative;
   display: block;
+  width: 100%;
   padding: 15px 46px 15px 18px;
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -73,6 +85,7 @@
   line-height: 1.6;
   color: var(--hub-accent);
   background: color-mix(in srgb, var(--hub-accent) 12%, transparent);
+  white-space: nowrap;
 }
 
 .hub-card-desc {
@@ -129,9 +142,17 @@
 
 .hub-dot { opacity: 0.5; }
 
+/* 桌面：两列排布，避免一行一张卡显得空旷 */
+@media (min-width: 900px) {
+  .hub { max-width: 980px; padding-bottom: 84px; }
+  .hub-brand { padding-bottom: 26px; }
+  .hub-links { grid-template-columns: 1fr 1fr; gap: 12px; }
+}
+
 @media (max-width: 480px) {
   .hub { padding: 0 16px 56px; }
   .hub-card { padding: 14px 40px 14px 15px; }
+  .hub-brand h1 { font-size: 1.7rem; }
 }
 
 /* 窄屏不让顶部导航溢出去（PaperMod 默认菜单不换行） */

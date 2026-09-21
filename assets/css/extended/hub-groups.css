@@ -1,7 +1,7 @@
 /* 分组小标题（配合 data/links.toml 的 group_* 字段） */
 .hub-group {
-  flex-basis: 100%;
-  margin: 26px 0 2px;
+  grid-column: 1 / -1;
+  margin: 24px 0 0;
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -11,5 +11,5 @@
 }
 
 .hub-group:first-child {
-  margin-top: 4px;
+  margin-top: 6px;
 }
