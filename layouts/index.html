@@ -88,7 +88,13 @@
   {{- $feat := slice }}
   {{- range site.Data.featured.items }}
     {{- $item := . }}
-    {{- with site.GetPage (printf "article/%s" $item.slug) }}
+    {{- $p := site.GetPage (printf "article/%s" $item.slug) }}
+    {{- if not $p }}
+      {{- range hugo.Sites }}
+        {{- if not $p }}{{ with .GetPage (printf "article/%s" $item.slug) }}{{ $p = . }}{{ end }}{{ end }}
+      {{- end }}
+    {{- end }}
+    {{- with $p }}
       {{- $feat = $feat | append (dict "page" . "tag" (index $item (printf "tag_%s" $t)) "desc" (index $item (printf "desc_%s" $t))) }}
     {{- end }}
   {{- end }}

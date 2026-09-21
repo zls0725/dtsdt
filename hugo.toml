@@ -78,6 +78,7 @@ enableGitInfo = true           # lastmod 取 git 提交时间，SEO 的"更新�
   # ===== 中文（默认，根目录）=====
   [languages.zh-cn]
     locale = "zh-CN"
+    label = "中文"
     title = "DTSDT"
     contentDir = "content/zh"
     weight = 1
@@ -110,18 +111,23 @@ enableGitInfo = true           # lastmod 取 git 提交时间，SEO 的"更新�
   # ===== 英文（/en/）=====
   [languages.en]
     locale = "en-US"
+    label = "English"
     title = "DTSDT"
     contentDir = "content/en"
     weight = 2
     [languages.en.params]
-      description = "dtsdt's personal site: articles, notes and project logs."
-      keywords = ["dtsdt", "blog", "notes"]
+      description = "DTSDT: one-stop overseas planning — study and immigration, asset allocation, insurance and family office."
+      keywords = ["dtsdt", "overseas assets", "immigration", "insurance", "family office"]
       [languages.en.params.homeInfoParams]
-        Title = "dtsdt"
-        Content = "Articles and notes. The site was rebuilt with Hugo: faster pages, complete SEO, simpler publishing."
+        Title = "DTSDT"
+        Content = "One-stop overseas planning: study and immigration, asset allocation, insurance and family office."
       [languages.en.params.hub]
-        name = "dtsdt"
-        tagline = "My home on the web: posts, tools and projects here, plus where else to find me."
+        name = "DTSDT"
+        tagline = "One-stop overseas planning: study and immigration, asset allocation, insurance and family office."
+    [[languages.en.menus.main]]
+      name = "Services"
+      url = "/en/services/"
+      weight = 5
     [[languages.en.menus.main]]
       name = "Articles"
       url = "/en/article/"

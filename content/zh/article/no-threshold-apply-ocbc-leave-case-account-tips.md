@@ -7,28 +7,6 @@ source_url: "https://blog.dtsdt.com/article/no-threshold-apply-ocbc-leave-case-a
 recovered_from: wayback-machine
 ---
 
-type
-
-status
-
-date
-
-slug
-
-summary
-
-tags
-
-category
-
-icon
-
-password
-
-URL
-
-progress
-
 ![Video preview](https://i.ytimg.com/vi/Q6ZaA2348yM/hqdefault.jpg)
 
 文字教程配合视频版使用效果更佳

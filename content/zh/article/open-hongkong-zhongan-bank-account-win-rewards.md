@@ -7,28 +7,6 @@ source_url: "https://blog.dtsdt.com/article/open-hongkong-zhongan-bank-account-w
 recovered_from: wayback-machine
 ---
 
-type
-
-status
-
-date
-
-slug
-
-summary
-
-tags
-
-category
-
-icon
-
-password
-
-URL
-
-progress
-
 ![Video preview](https://i.ytimg.com/vi/JT7ii152IoU/hqdefault.jpg)
 
 众安是个新兴的数字银行，用户不再需要到银行分行排队，只需几分钟即可完成开户程序。在开通香港线下银行的间隙即可申请众安银行账户，本文详细介绍香港第一家虚拟银行——众安银行（ZA Bank）的开户流程、服务范围、手续费以及常见问题。

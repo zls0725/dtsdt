@@ -7,28 +7,6 @@ source_url: "https://blog.dtsdt.com/article/ai-large-model-exchange-input"
 recovered_from: wayback-machine
 ---
 
-type
-
-status
-
-date
-
-slug
-
-summary
-
-tags
-
-category
-
-icon
-
-password
-
-URL
-
-progress
-
 在与我协作解决问题、执行方案、或完成写作的过程中，为了使内容输出更加优秀、生动、灵动，同时补充完善可能存在的不足，以下是详细说明你需要关注的方面和需要完成的主要工作。
 
 #### 1. **任务目标的明确与清晰**

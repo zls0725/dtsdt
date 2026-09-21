@@ -7,28 +7,6 @@ source_url: "https://blog.dtsdt.com/article/gitHub-build-repository"
 recovered_from: wayback-machine
 ---
 
-type
-
-status
-
-date
-
-slug
-
-summary
-
-tags
-
-category
-
-icon
-
-password
-
-URL
-
-progress
-
 在 GitHub 上建立一个资源共享仓库（如共享书籍、软件）需要从多个角度进行规划和实施，以确保其长期发展潜力。下面是从结构构建到分享的整体思路和方法，包括注意事项和关键步骤。
 
 #### 一、明确仓库的目的和内容类型

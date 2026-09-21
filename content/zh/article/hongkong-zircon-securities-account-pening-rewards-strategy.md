@@ -7,28 +7,6 @@ source_url: "https://blog.dtsdt.com/article/hongkong-zircon-securities-account-p
 recovered_from: wayback-machine
 ---
 
-type
-
-status
-
-date
-
-slug
-
-summary
-
-tags
-
-category
-
-icon
-
-password
-
-URL
-
-progress
-
 ![Video preview](https://i.ytimg.com/vi/J4wVwwD7Xr8/hqdefault.jpg)
 
 卓锐证券开户优惠攻略2024/即日至2024年10月31日，经[香港Henry邀请链接](https://h5pro.zr66.com/zhuorui_web_h5/?channelId=100177)成功在卓锐证券开户。

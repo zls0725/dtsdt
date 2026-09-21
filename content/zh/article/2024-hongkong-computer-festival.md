@@ -7,28 +7,6 @@ source_url: "https://blog.dtsdt.com/article/2024-hongkong-computer-festival"
 recovered_from: wayback-machine
 ---
 
-type
-
-status
-
-date
-
-slug
-
-summary
-
-tags
-
-category
-
-icon
-
-password
-
-URL
-
-progress
-
 2024年香港电脑节以人工智能为核心主题，与往届相比，2024年香港电脑节更加关注前沿科技的展示和实际应用，尤其是在人工智能领域的突破，这将为参观者带来全新的视角和体验。让你感受到科技发展的前沿。这次展会不再只是一个购物和产品展示的平台，而是一个融合了科技、电竞、和中国市场发展趋势的综合性展会。在规模上可以说是更高级一些，不仅仅是硬件产品应用产品也大放异彩。
 
 ![notion image](https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F83319ea5-89af-419a-96e9-38e87cdccd7e%2F84d7364c-e4fe-4980-8ece-c6a07f69d3c0%2Fcleanshot_2024-08-21_at_09.03.262x_08_21_2024.webp?table=block&id=825a4002-e6e0-457a-86b3-994fb9103070&t=825a4002-e6e0-457a-86b3-994fb9103070&width=707.9947509765625&cache=v2)

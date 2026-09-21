@@ -7,28 +7,6 @@ source_url: "https://blog.dtsdt.com/article/gpt-accurate-efficient-solving-probl
 recovered_from: wayback-machine
 ---
 
-type
-
-status
-
-date
-
-slug
-
-summary
-
-tags
-
-category
-
-icon
-
-password
-
-URL
-
-progress
-
 为了实现更清晰细致的逻辑流程，以下是一个经过优化的闭环问答反馈流程示例。这个流程分为三个主要部分：提问与任务描述、结果反馈与评估、继续完善与补充。每个部分都有明确的步骤和要求，确保任务的执行和反馈过程能够顺利且高效。
 
 #### **一. 提问与任务描述**

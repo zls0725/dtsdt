@@ -7,28 +7,6 @@ source_url: "https://blog.dtsdt.com/article/domain-resolution-subdomain-cname"
 recovered_from: wayback-machine
 ---
 
-type
-
-status
-
-date
-
-slug
-
-summary
-
-tags
-
-category
-
-icon
-
-password
-
-URL
-
-progress
-
 ## **一个主域名如何添加子域名？**
 
 要将一个主域名（[如example.com](http://xn--example-i22m.com/)）添加到域名（[如sub.example.com](http://xn--sub-eo8e.example.com/)），你可以按照以下步骤进行操作：

@@ -1,6 +1,6 @@
 ---
 title: "Home"
-description: "dtsdt's personal site: articles, notes and project logs."
+description: "DTSDT: one-stop overseas planning."
 date: 2026-09-21
 draft: false
 ---

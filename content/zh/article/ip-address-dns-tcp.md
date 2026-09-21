@@ -7,28 +7,6 @@ source_url: "https://blog.dtsdt.com/article/ip-address-dns-tcp"
 recovered_from: wayback-machine
 ---
 
-type
-
-status
-
-date
-
-slug
-
-summary
-
-tags
-
-category
-
-icon
-
-password
-
-URL
-
-progress
-
 mac以太网上的IPV4，ip地址，子网掩码，路由器，DNS服务器，搜索域，等等要上网设置的详细参数都是什么意思？各个用途功能又是什么？
 
 想要会上网这些网络基础知识还是要学习一下的，赶紧拿起小本本记下来，以后很多时候都是要用到的哦，有了这些上网不求人，妈妈再也不用担心家里网连不上没有我搞不定的了。

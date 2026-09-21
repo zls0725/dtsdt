@@ -7,28 +7,6 @@ source_url: "https://blog.dtsdt.com/article/github-readme-norm"
 recovered_from: wayback-machine
 ---
 
-type
-
-status
-
-date
-
-slug
-
-summary
-
-tags
-
-category
-
-icon
-
-password
-
-URL
-
-progress
-
 撰写高质量的`README.md`文档是维护和推广GitHub仓库的重要环节。良好的`README.md`不仅帮助用户快速理解仓库的内容和用途，还能提升仓库的专业性和吸引力。以下是详细的`README.md`内容书写规范，并结合成功案例进行说明。
 
 #### 1. `README.md` 的基本结构

@@ -7,28 +7,6 @@ source_url: "https://blog.dtsdt.com/article/vercel-deployment-github-domain"
 recovered_from: wayback-machine
 ---
 
-type
-
-status
-
-date
-
-slug
-
-summary
-
-tags
-
-category
-
-icon
-
-password
-
-URL
-
-progress
-
 ![选择项目导入](https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F83319ea5-89af-419a-96e9-38e87cdccd7e%2F190c7d7a-981b-481c-ac64-3313598c320b%2F%25E8%259E%25A2%25E5%25B9%2595%25E6%2588%25AA%25E5%259C%2596_2024-07-11_%25E4%25B8%258B%25E5%258D%25883.12.39.png?table=block&id=d8f8ce5d-35e1-4d87-af1c-b535b36d8848&t=d8f8ce5d-35e1-4d87-af1c-b535b36d8848&width=1827&cache=v2)
 
 选择项目导入

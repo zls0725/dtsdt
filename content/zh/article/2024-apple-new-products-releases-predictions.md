@@ -7,28 +7,6 @@ source_url: "https://blog.dtsdt.com/article/2024-apple-new-products-releases-pre
 recovered_from: wayback-machine
 ---
 
-type
-
-status
-
-date
-
-slug
-
-summary
-
-tags
-
-category
-
-icon
-
-password
-
-URL
-
-progress
-
 一年一度的苹果春晚即将到来，看看日历距离9月份的日期已经逐渐逼近。那么围绕苹果新品更新了哪些产品？哪些功能？大家是否有所期待？而你最关心的功能又是什么？网上的预测也是层出不穷，各种爆料各种消息。今天也不废话了一口气将所有要更新的产品以及功能汇总全部带给大家，让大家提前一饱眼福。
 
 #### **1. iPhone 16 系列**

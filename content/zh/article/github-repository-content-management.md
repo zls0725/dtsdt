@@ -7,28 +7,6 @@ source_url: "https://blog.dtsdt.com/article/github-repository-content-management
 recovered_from: wayback-machine
 ---
 
-type
-
-status
-
-date
-
-slug
-
-summary
-
-tags
-
-category
-
-icon
-
-password
-
-URL
-
-progress
-
 在GitHub上建立并管理一个资源共享的仓库（如书籍、软件）时，仓库的内容管理至关重要。要确保仓库内容结构清晰、易于扩展，并能长期维护使用，必须考虑格式规范、内容全面、以及有效的内容管理策略。以下是仓库内容管理的详细规范，以及成功案例的具体说明。
 
 #### 1. 仓库内容管理的基本要求

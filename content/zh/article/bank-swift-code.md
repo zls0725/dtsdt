@@ -7,28 +7,6 @@ source_url: "https://blog.dtsdt.com/article/bank-swift-code"
 recovered_from: wayback-machine
 ---
 
-type
-
-status
-
-date
-
-slug
-
-summary
-
-tags
-
-category
-
-icon
-
-password
-
-URL
-
-progress
-
 ### 什么是银行代码？
 
 银行的Bank Code（银行代码）是一种用于识别特定银行的独特数字或字母组合。它在各种金融交易中扮演着重要角色，比如汇款、支付和账户识别。
