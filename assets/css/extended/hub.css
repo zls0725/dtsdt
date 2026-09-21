@@ -133,3 +133,16 @@
   .hub { padding: 0 16px 56px; }
   .hub-card { padding: 14px 40px 14px 15px; }
 }
+
+/* 窄屏不让顶部导航溢出去（PaperMod 默认菜单不换行） */
+@media (max-width: 760px) {
+  #menu { flex-wrap: wrap; }
+  #menu a span { font-size: 0.9rem; }
+  .header-nav { line-height: 1.6; padding-top: 4px; padding-bottom: 2px; }
+}
+
+@media (max-width: 520px) {
+  .logo a { font-size: 20px; }
+  #menu { column-gap: 0.9rem; }
+  #menu a span { font-size: 0.85rem; }
+}

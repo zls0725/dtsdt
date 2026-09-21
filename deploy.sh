@@ -15,6 +15,6 @@ if [ "${1:-}" = "preview" ]; then
   echo "▶ 部署预览"
   npx --yes wrangler pages deploy public --project-name "$PROJECT" --branch preview --commit-dirty=true
 else
-  echo "▶ 部署生产（$BRANCH）"
+  echo "▶ 部署生产（${BRANCH}）"
   npx --yes wrangler pages deploy public --project-name "$PROJECT" --branch "$BRANCH" --commit-dirty=true
 fi
