@@ -4,7 +4,7 @@
 # ============================================================
 
 baseURL = "https://dtsdt.com/"
-title = "dtsdt"
+title = "DTSDT"
 defaultContentLanguage = "zh-cn"
 defaultContentLanguageInSubdir = false   # 中文不放进 /zh/，老 URL 才能对上
 hasCJKLanguage = true                    # 中文按字计字数，阅读时长才准
@@ -36,7 +36,7 @@ enableGitInfo = true           # lastmod 取 git 提交时间，SEO 的"更新�
 # ---------- 两种语言共用的外观 / 结构 ----------
 [params]
   env = "production"
-  author = "dtsdt"
+  author = "DTSDT"
   DateFormat = "2006-01-02"
   defaultTheme = "auto"
   disableThemeToggle = false
@@ -78,30 +78,26 @@ enableGitInfo = true           # lastmod 取 git 提交时间，SEO 的"更新�
   # ===== 中文（默认，根目录）=====
   [languages.zh-cn]
     locale = "zh-CN"
-    title = "dtsdt"
+    title = "DTSDT"
     contentDir = "content/zh"
     weight = 1
     [languages.zh-cn.params]
-      description = "dtsdt 的个人网站：文章、笔记与项目记录。"
-      keywords = ["dtsdt", "博客", "笔记"]
+      description = "DTSDT：海外资产配置一站式服务 —— 留学移民与教育规划、资产配置、保险理财、家族办公室。"
+      keywords = ["dtsdt", "海外资产配置", "留学移民", "保险理财", "家族办公室"]
       [languages.zh-cn.params.homeInfoParams]
-        Title = "dtsdt"
-        Content = "这里记录我的文章与笔记。站点已从 Notion 迁到 Hugo：打开更快、SEO 更完整、发文章更省事。"
+        Title = "DTSDT"
+        Content = "海外资产配置一站式服务：留学移民与教育规划、资产配置、保险理财、家族办公室。"
       [languages.zh-cn.params.hub]
-        name = "dtsdt"
-        tagline = "我的官网入口：本站文章、工具与项目，以及我在别处的落脚点。"
+        name = "DTSDT"
+        tagline = "海外资产配置一站式服务：留学移民与教育规划、资产配置、保险理财、家族办公室。"
+    [[languages.zh-cn.menus.main]]
+      name = "服务"
+      url = "/services/"
+      weight = 5
     [[languages.zh-cn.menus.main]]
       name = "文章"
       url = "/article/"
       weight = 10
-    [[languages.zh-cn.menus.main]]
-      name = "归档"
-      url = "/archives/"
-      weight = 20
-    [[languages.zh-cn.menus.main]]
-      name = "标签"
-      url = "/tags/"
-      weight = 30
     [[languages.zh-cn.menus.main]]
       name = "搜索"
       url = "/search/"
@@ -114,7 +110,7 @@ enableGitInfo = true           # lastmod 取 git 提交时间，SEO 的"更新�
   # ===== 英文（/en/）=====
   [languages.en]
     locale = "en-US"
-    title = "dtsdt"
+    title = "DTSDT"
     contentDir = "content/en"
     weight = 2
     [languages.en.params]
@@ -130,14 +126,6 @@ enableGitInfo = true           # lastmod 取 git 提交时间，SEO 的"更新�
       name = "Articles"
       url = "/en/article/"
       weight = 10
-    [[languages.en.menus.main]]
-      name = "Archive"
-      url = "/en/archives/"
-      weight = 20
-    [[languages.en.menus.main]]
-      name = "Tags"
-      url = "/en/tags/"
-      weight = 30
     [[languages.en.menus.main]]
       name = "Search"
       url = "/en/search/"

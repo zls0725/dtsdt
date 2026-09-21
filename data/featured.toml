@@ -1,0 +1,33 @@
+# =========================================================
+# 首页「精选文章」—— 只展示几篇，不铺全部
+# slug 对应 content/zh/article/<slug>.md
+# desc_* 为首页卡片专用摘要（手写，避免正文自动截断）
+# =========================================================
+
+[[items]]
+  slug = "no-threshold-apply-ocbc-leave-case-account-tips"
+  tag_zh = "开户"
+  tag_en = "Account"
+  desc_zh = "新加坡第二大银行 OCBC 远程开户：材料清单、申请步骤与账户优势。"
+  desc_en = "Opening an OCBC Singapore account remotely: documents, steps and benefits."
+
+[[items]]
+  slug = "bank-swift-code"
+  tag_zh = "工具"
+  tag_en = "Toolkit"
+  desc_zh = "Bank Code、SWIFT、IBAN、Sort Code 分别是什么，香港银行代码与汇款资料汇总。"
+  desc_en = "Bank Code, SWIFT, IBAN and Sort Code explained, with Hong Kong bank codes."
+
+[[items]]
+  slug = "hongkong-zircon-securities-account-pening-rewards-strategy"
+  tag_zh = "证券"
+  tag_en = "Securities"
+  desc_zh = "零基础开港股账户：卓锐证券开户流程与奖赏，最高可获 HK$3,584。"
+  desc_en = "Opening a HK stock account with Zircon Securities: steps and rewards."
+
+[[items]]
+  slug = "open-hongkong-zhongan-bank-account-win-rewards"
+  tag_zh = "银行"
+  tag_en = "Banking"
+  desc_zh = "3 分钟线上开通香港众安银行账户，附开户礼与注意事项。"
+  desc_en = "Opening a ZA Bank account in three minutes, plus the welcome offer."

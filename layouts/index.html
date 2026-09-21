@@ -1,43 +1,126 @@
-{{- /* 官网首页：本站内容优先的门户（覆盖主题默认文章列表） */ -}}
+{{- /* dtsdt.com 官网首页 v5：主官网 / 一站式服务门户
+   结构：Hero → 服务（功能页）→ 服务流程 → 精选文章 → 其它入口 → 页脚
+   数据源：data/services.toml（服务）、data/featured.toml（精选）、data/links.toml（入口）
+   内容全部来自 dtsdt 自己的 Notion 库，不依赖外部站点 */ -}}
 {{- define "main" }}
 {{- $en := eq site.Language.Lang "en" }}
-{{- $posts := where site.RegularPages "Section" "article" }}
-{{- $posts = $posts.ByDate.Reverse }}
+{{- $t := cond $en "en" "zh" }}
 <div class="hub">
 
-  <header class="hub-brand">
-    <p class="hub-eyebrow">{{ cond $en "DTSDT · Official site" "DTSDT · 官方网站" }}</p>
-    <h1>{{ site.Params.hub.name | default site.Title }}</h1>
-    {{- with site.Params.hub.tagline }}
-    <p class="hub-tagline">{{ . }}</p>
-    {{- end }}
-    <div class="hub-cta">
-      <a class="hub-btn hub-btn-solid" href="{{ "article/" | relLangURL }}">
-        {{ cond $en "Read articles" "浏览文章" }}<span aria-hidden="true">→</span>
+  {{- /* ---------- Hero ---------- */ -}}
+  <section class="hero">
+    <p class="hero-eyebrow">
+      <span class="hero-pulse" aria-hidden="true"></span>
+      {{ cond $en "DTSDT · One-stop overseas planning" "DTSDT · 海外资产配置一站式服务" }}
+    </p>
+    <h1 class="hero-title">
+      {{ cond $en `Global assets, <em>handled end to end</em>.` `海外资产配置，<em>一站式办妥</em>。` | safeHTML }}
+    </h1>
+    <p class="hero-sub">
+      {{ cond $en
+        `Immigration and education planning, asset allocation, insurance and family office — one team, one process, and follow-through over the long run.`
+        `留学移民与教育规划、资产配置、保险理财、家族办公室 —— 一个团队、一条流程，并且长期跟踪。` }}
+    </p>
+    <div class="hero-actions">
+      <a class="hub-btn hub-btn-solid" href="{{ "services/" | relLangURL }}">
+        {{ cond $en "Explore services" "浏览服务" }}<span aria-hidden="true">→</span>
       </a>
-      <a class="hub-btn hub-btn-ghost" href="{{ "about/" | relLangURL }}">{{ cond $en "About this site" "关于本站" }}</a>
+      <a class="hub-btn hub-btn-ghost" href="{{ "article/" | relLangURL }}">{{ cond $en "Read articles" "查看文章" }}</a>
     </div>
-  </header>
-
-  {{- /* 本站最新文章：直接读本站内容，不依赖外部站点 */ -}}
-  {{- with $posts }}
-  <section class="hub-sec hub-latest">
-    <h2 class="hub-group">{{ cond $en "Latest on this site" "本站最新" }}</h2>
-    <ul class="hub-latest-list">
-      {{- range first 6 . }}
-      <li>
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
-      </li>
+    <ul class="hero-stats">
+      {{- range (cond $en
+        (slice "5 service lines" "Multi-currency, global" "Long-term follow-up")
+        (slice "5 条服务线" "多币种 · 全球配置" "长期跟踪" )) }}
+      <li>{{ . }}</li>
       {{- end }}
     </ul>
-    {{- if gt (len $posts) 6 }}
-    <a class="hub-latest-more" href="{{ "article/" | relLangURL }}">{{ cond $en "All posts →" "全部文章 →" }}</a>
-    {{- end }}
+  </section>
+
+  {{- /* ---------- 服务（= 功能页入口） ---------- */ -}}
+  {{- $svc := site.Data.services.items }}
+  {{- with $svc }}
+  <section class="hub-sec svc-sec">
+    <div class="sec-head">
+      <h2 class="sec-title">{{ cond $en "Services" "服务" }}</h2>
+      <a class="sec-more" href="{{ "services/" | relLangURL }}">{{ cond $en "All services" "全部服务" }} →</a>
+    </div>
+    <div class="svc-grid">
+      {{- range . }}
+      {{- $title := (index . (printf "title_%s" $t)) | default .title_zh }}
+      {{- $desc  := (index . (printf "desc_%s"  $t)) | default .desc_zh }}
+      {{- $badge := (index . (printf "badge_%s" $t)) | default .badge_zh }}
+      <a class="svc-card{{ if .wide }} svc-card-wide{{ end }}" href="{{ (printf "services/%s/" .slug) | relLangURL }}">
+        <span class="svc-head">
+          <span class="svc-icon" aria-hidden="true">{{ .icon }}</span>
+          <span class="svc-meta">
+            <span class="svc-num">{{ .num }}</span>
+            {{- with $badge }}<span class="svc-badge">{{ . }}</span>{{ end }}
+          </span>
+        </span>
+        <span class="svc-title">{{ $title }}</span>
+        <span class="svc-desc">{{ $desc }}</span>
+        <span class="svc-go" aria-hidden="true">→</span>
+      </a>
+      {{- end }}
+    </div>
   </section>
   {{- end }}
 
-  {{- /* 链接分组：每个分组一个独立栅格，结构更清晰 */ -}}
+  {{- /* ---------- 服务流程 ---------- */ -}}
+  <section class="hub-sec">
+    <div class="sec-head">
+      <h2 class="sec-title">{{ cond $en "How it works" "服务流程" }}</h2>
+    </div>
+    <ol class="steps">
+      {{- range (cond $en
+        (slice (slice "Talk" "Tell us your status, assets and goals.") (slice "Plan" "A service package built on your real situation, including problems you have not hit yet.") (slice "Execute" "Accounts, visas, schooling, insurance, family office — handled with guidance.") (slice "Follow up" "The relationship continues: review, rebalance and reminders."))
+        (slice (slice "需求沟通" "先说清你目前的身份、资产与目标。") (slice "方案设计" "按你的实际情况出服务组合，并提前布局你还没想到的问题。") (slice "落地执行" "开户、签证、留学、保险、家办逐个环节代办与指导。") (slice "长期跟踪" "建立服务关系后持续复盘、再平衡、提醒。") )) }}
+      <li class="step">
+        <span class="step-num" aria-hidden="true"></span>
+        <span class="step-title">{{ index . 0 }}</span>
+        <span class="step-desc">{{ index . 1 }}</span>
+      </li>
+      {{- end }}
+    </ol>
+  </section>
+
+  {{- /* ---------- 精选文章（只放几篇） ---------- */ -}}
+  {{- $feat := slice }}
+  {{- range site.Data.featured.items }}
+    {{- $item := . }}
+    {{- with site.GetPage (printf "article/%s" $item.slug) }}
+      {{- $feat = $feat | append (dict "page" . "tag" (index $item (printf "tag_%s" $t)) "desc" (index $item (printf "desc_%s" $t))) }}
+    {{- end }}
+  {{- end }}
+  {{- if not $feat }}
+    {{- range first 4 (where site.RegularPages "Section" "article").ByDate.Reverse }}
+      {{- $feat = $feat | append (dict "page" . "tag" "" "desc" "") }}
+    {{- end }}
+  {{- end }}
+  {{- with $feat }}
+  <section class="hub-sec">
+    <div class="sec-head">
+      <h2 class="sec-title">{{ cond $en "Selected reading" "精选文章" }}</h2>
+      <a class="sec-more" href="{{ "article/" | relLangURL }}">{{ cond $en "All articles" "全部文章" }} →</a>
+    </div>
+    <div class="feat-grid">
+      {{- range . }}
+      {{- $p := .page }}
+      <a class="feat-card" href="{{ $p.RelPermalink }}">
+        <span class="feat-top">
+          {{- with .tag }}<span class="feat-tag">{{ . }}</span>{{ end }}
+          <time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "2006-01-02" }}</time>
+        </span>
+        <span class="feat-title">{{ $p.Title }}</span>
+        <span class="feat-desc">{{ .desc | default ($p.Summary | plainify | truncate 78) }}</span>
+        <span class="feat-go" aria-hidden="true">→</span>
+      </a>
+      {{- end }}
+    </div>
+  </section>
+  {{- end }}
+
+  {{- /* ---------- 其它入口（分组卡片） ---------- */ -}}
   {{- $items := site.Data.links.items }}
   {{- $groups := slice }}
   {{- range $items }}
@@ -47,7 +130,7 @@
   {{- range $groups }}
     {{- $g := . }}
     <section class="hub-sec">
-      <h2 class="hub-group">{{ $g }}</h2>
+      <div class="sec-head"><h2 class="sec-title sec-title-sm">{{ $g }}</h2></div>
       <div class="hub-links">
         {{- range $items }}
         {{- if eq (cond $en .group_en .group_zh) $g }}
@@ -75,6 +158,8 @@
 
   <footer class="hub-foot">
     <a href="{{ cond $en "/" "/en/" }}">{{ cond $en "中文" "English" }}</a>
+    <span class="hub-dot">·</span>
+    <a href="{{ "services/" | relLangURL }}">{{ cond $en "Services" "服务" }}</a>
     <span class="hub-dot">·</span>
     <a href="{{ "article/" | relLangURL }}">{{ cond $en "Articles" "本站文章" }}</a>
     <span class="hub-dot">·</span>

@@ -1,0 +1,61 @@
+# =========================================================
+# 首页「服务」卡片 —— 数据源
+# 每一项对应 content/zh/services/<slug>.md（功能页）
+# 内容全部取自 dtsdt 自己的 Notion 库，不另编
+# =========================================================
+
+[[items]]
+  num = "01"
+  slug = "overseas-asset-configuration-one-stop-solution-plan"
+  title_zh = "海外资产配置一站式服务"
+  title_en = "One-stop overseas planning"
+  icon = "🏦"
+  badge_zh = "一站式"
+  badge_en = "One-stop"
+  wide = true
+  desc_zh = "留学移民、教育规划、资产配置、保险理财、家族办公室一次打通；建立服务关系后按你的实际情况出方案，并提前布局你还没想到的问题。"
+  desc_en = "Immigration, education, asset allocation, insurance and family office — planned as one continuous service relationship."
+
+[[items]]
+  num = "02"
+  slug = "asset-allocation"
+  title_zh = "资产配置"
+  title_en = "Asset allocation"
+  icon = "📊"
+  badge_zh = "核心"
+  badge_en = "Core"
+  desc_zh = "按风险承受力与目标做全球配置：股票、债券、基金、不动产与现金管理，多币种分散，长期跟踪再平衡。"
+  desc_en = "Global allocation across equities, bonds, funds and property — diversified, multi-currency, rebalanced over time."
+
+[[items]]
+  num = "03"
+  slug = "study-abroad-immigration"
+  title_zh = "留学移民"
+  title_en = "Study & immigration"
+  icon = "🎓"
+  badge_zh = "身份"
+  badge_en = "Residency"
+  desc_zh = "选国家、选学校、文书与面试辅导，签证办理与落地安排；从学生签证到工作、投资移民一条线办完。"
+  desc_en = "Country and school selection, applications, visa filing and arrival support — student to investor routes."
+
+[[items]]
+  num = "04"
+  slug = "insurance-finance"
+  title_zh = "保险理财"
+  title_en = "Insurance & wealth"
+  icon = "🛡"
+  badge_zh = "保障"
+  badge_en = "Protection"
+  desc_zh = "先看风险再谈收益：寿险、重疾、医疗、储蓄分红与退休规划，按家庭结构量身配，不推不需要的产品。"
+  desc_en = "Risk first, then return: life, health and savings plans tailored to your family structure."
+
+[[items]]
+  num = "05"
+  slug = "family-office"
+  title_zh = "家族办公室"
+  title_en = "Family office"
+  icon = "🏛"
+  badge_zh = "传承"
+  badge_en = "Legacy"
+  desc_zh = "中产家庭也能用的家办服务：财富管理、投资架构、税务与法律、教育与退休规划、保险与风险控制。"
+  desc_en = "Family-office services for mass-affluent households: wealth, structuring, tax, education and risk."
