@@ -10,7 +10,11 @@
   </header>
 
   <nav class="hub-links" aria-label="{{ cond $en "Links" "链接" }}">
+    {{- $prev := "" }}
     {{- range site.Data.links.items }}
+    {{- $group := cond $en .group_en .group_zh }}
+    {{- with $group }}{{ if ne . $prev }}<h2 class="hub-group">{{ . }}</h2>{{ end }}{{ end }}
+    {{- $prev = $group }}
     {{- $title := cond $en .label_en .label_zh }}
     {{- $desc  := cond $en .desc_en  .desc_zh }}
     {{- $tag   := cond $en .tag_en   .tag }}
