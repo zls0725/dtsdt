@@ -1,4 +1,4 @@
-{{- /* 官网首页：极简链接门户（覆盖主题默认的文章列表） */ -}}
+{{- /* 官网首页：本站内容优先的门户（覆盖主题默认文章列表） */ -}}
 {{- define "main" }}
 {{- $en := eq site.Language.Lang "en" }}
 <div class="hub">
@@ -9,6 +9,26 @@
     {{- end }}
   </header>
 
+  {{- /* 本站最新文章：直接读本站内容，不依赖外部站点 */ -}}
+  {{- $posts := where site.RegularPages "Section" "article" }}
+  {{- $posts = $posts.ByDate.Reverse }}
+  {{- with $posts }}
+  <section class="hub-latest">
+    <h2 class="hub-group">{{ cond $en "Latest on this site" "本站最新" }}</h2>
+    <ul class="hub-latest-list">
+      {{- range first 6 . }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+      </li>
+      {{- end }}
+    </ul>
+    {{- if gt (len $posts) 6 }}
+    <a class="hub-latest-more" href="{{ "article/" | relLangURL }}">{{ cond $en "All posts →" "全部文章 →" }}</a>
+    {{- end }}
+  </section>
+  {{- end }}
+
   <nav class="hub-links" aria-label="{{ cond $en "Links" "链接" }}">
     {{- $prev := "" }}
     {{- range site.Data.links.items }}
@@ -18,7 +38,8 @@
     {{- $title := cond $en .label_en .label_zh }}
     {{- $desc  := cond $en .desc_en  .desc_zh }}
     {{- $tag   := cond $en .tag_en   .tag }}
-    <a class="hub-card" href="{{ .url }}"{{ if .external }} target="_blank" rel="noopener noreferrer"{{ end }}>
+    {{- $href  := cond .external .url (.url | relLangURL) }}
+    <a class="hub-card{{ if not .external }} hub-card-in{{ end }}" href="{{ $href }}"{{ if .external }} target="_blank" rel="noopener noreferrer"{{ end }}>
       <span class="hub-card-head">
         <span class="hub-card-title">{{ $title }}</span>
         {{- with $tag }}<span class="hub-card-tag">{{ . }}</span>{{ end }}
@@ -34,11 +55,13 @@
   {{- end }}
 
   <footer class="hub-foot">
-    <a href="{{ cond $en "/en/" "/" }}">{{ cond $en "中文" "English" }}</a>
+    <a href="{{ cond $en "/" "/en/" }}">{{ cond $en "中文" "English" }}</a>
     <span class="hub-dot">·</span>
     <a href="{{ "article/" | relLangURL }}">{{ cond $en "Articles" "本站文章" }}</a>
     <span class="hub-dot">·</span>
     <a href="{{ "about/" | relLangURL }}">{{ cond $en "About this site" "关于本站" }}</a>
+    <span class="hub-dot">·</span>
+    <a href="https://hkhenry.com/" target="_blank" rel="noopener">hkhenry.com</a>
   </footer>
 </div>
 {{- end }}

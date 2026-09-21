@@ -1,0 +1,27 @@
+/* 首页「本站最新」列表（配合 hub.css 的变量） */
+.hub-latest { margin: 0 0 2rem; }
+.hub-latest-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
+.hub-latest-list li {
+  display: flex; align-items: baseline; gap: .75rem;
+  padding: .6rem 0; border-bottom: 1px solid var(--border);
+  min-width: 0;
+}
+.hub-latest-list a {
+  flex: 1 1 auto; min-width: 0;
+  color: var(--primary); text-decoration: none; font-weight: 600;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.hub-latest-list a:hover { color: var(--hub-accent, #2563eb); }
+.hub-latest-list time {
+  flex: 0 0 auto; font-size: .8rem; color: var(--secondary);
+  font-variant-numeric: tabular-nums;
+}
+.hub-latest-more {
+  display: inline-block; margin-top: .75rem;
+  font-size: .9rem; color: var(--hub-accent, #2563eb); text-decoration: none;
+}
+.hub-card-in .hub-card-tag { color: var(--hub-accent, #2563eb); border-color: currentColor; }
+@media (max-width: 600px) {
+  .hub-latest-list li { flex-wrap: wrap; gap: .2rem; }
+  .hub-latest-list a { white-space: normal; }
+}

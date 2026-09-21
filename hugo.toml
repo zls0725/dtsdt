@@ -4,7 +4,7 @@
 # ============================================================
 
 baseURL = "https://dtsdt.com/"
-title = "dtsdt.com"
+title = "dtsdt"
 defaultContentLanguage = "zh-cn"
 defaultContentLanguageInSubdir = false   # 中文不放进 /zh/，老 URL 才能对上
 hasCJKLanguage = true                    # 中文按字计字数，阅读时长才准
@@ -78,7 +78,7 @@ enableGitInfo = true           # lastmod 取 git 提交时间，SEO 的"更新�
   # ===== 中文（默认，根目录）=====
   [languages.zh-cn]
     locale = "zh-CN"
-    title = "dtsdt.com"
+    title = "dtsdt"
     contentDir = "content/zh"
     weight = 1
     [languages.zh-cn.params]
@@ -88,8 +88,8 @@ enableGitInfo = true           # lastmod 取 git 提交时间，SEO 的"更新�
         Title = "dtsdt"
         Content = "这里记录我的文章与笔记。站点已从 Notion 迁到 Hugo：打开更快、SEO 更完整、发文章更省事。"
       [languages.zh-cn.params.hub]
-        name = "香港 Henry"
-        tagline = "聊金融 · 玩科技 · 观全球 · 享自由。这里是我的官网入口，内容都在下面这些地方。"
+        name = "dtsdt"
+        tagline = "我的官网入口：本站文章、工具与项目，以及我在别处的落脚点。"
     [[languages.zh-cn.menus.main]]
       name = "文章"
       url = "/article/"
@@ -114,7 +114,7 @@ enableGitInfo = true           # lastmod 取 git 提交时间，SEO 的"更新�
   # ===== 英文（/en/）=====
   [languages.en]
     locale = "en-US"
-    title = "dtsdt.com"
+    title = "dtsdt"
     contentDir = "content/en"
     weight = 2
     [languages.en.params]
@@ -124,8 +124,8 @@ enableGitInfo = true           # lastmod 取 git 提交时间，SEO 的"更新�
         Title = "dtsdt"
         Content = "Articles and notes. The site was rebuilt with Hugo: faster pages, complete SEO, simpler publishing."
       [languages.en.params.hub]
-        name = "Hong Kong Henry"
-        tagline = "Finance · Tech · Global · Freedom. This is my official hub — everything lives in the links below."
+        name = "dtsdt"
+        tagline = "My home on the web: posts, tools and projects here, plus where else to find me."
     [[languages.en.menus.main]]
       name = "Articles"
       url = "/en/article/"

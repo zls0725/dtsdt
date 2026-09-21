@@ -1,122 +1,111 @@
 # =========================================
-# 官网首页的链接卡片
-# 顺序即显示顺序；增减条目只改这个文件
-# group_zh / group_en 相同的连续条目会归到一个小标题下
-# zh 用 label_zh / desc_zh / tag，英文站用 *_en
-# 链接全部来自 hkhenry.com 首页真实导航与页脚（已核对）
+# 首页链接卡片（dtsdt 自己的门户）
+# 顺序即显示顺序，增减条目只改这一行左右的文件
+# external=false → 站内页（自动带语言前缀）；true → 外站/自媒体
 # =========================================
 
+# ---------- 本站内容（dtsdt 自己的）----------
 [[items]]
-  group_zh = "主站"
-  group_en = "Main site"
-  url = "https://hkhenry.com/"
-  label_zh = "香港 Henry 官网"
-  label_en = "Hong Kong Henry"
-  desc_zh = "聊金融 · 玩科技 · 观全球 · 享自由"
-  desc_en = "Finance · Tech · Global · Freedom"
-  tag = "主站"
-  tag_en = "Home"
-  external = true
+  group_zh = "本站"
+  group_en = "This site"
+  url = "/article/"
+  label_zh = "文章"
+  label_en = "Articles"
+  desc_zh = "本站全部文章（含从旧站复原的 16 篇）"
+  desc_en = "All posts on this site"
+  tag = "内容"
+  tag_en = "Posts"
+  external = false
 
 [[items]]
-  group_zh = "主站"
-  group_en = "Main site"
-  url = "https://hkhenry.com/about/"
-  label_zh = "关于与联系"
-  label_en = "About & contact"
-  desc_zh = "背景介绍、合作与联系方式"
-  desc_en = "Background, contact and collab"
+  group_zh = "本站"
+  group_en = "This site"
+  url = "/archives/"
+  label_zh = "归档"
+  label_en = "Archive"
+  desc_zh = "按时间翻全部内容"
+  desc_en = "Everything by date"
+  tag = "时间线"
+  tag_en = "Timeline"
+  external = false
+
+[[items]]
+  group_zh = "本站"
+  group_en = "This site"
+  url = "/tags/"
+  label_zh = "标签"
+  label_en = "Tags"
+  desc_zh = "按关键词找内容"
+  desc_en = "Find by keyword"
+  tag = "检索"
+  tag_en = "Search"
+  external = false
+
+[[items]]
+  group_zh = "本站"
+  group_en = "This site"
+  url = "/search/"
+  label_zh = "搜索"
+  label_en = "Search"
+  desc_zh = "站内全文搜索"
+  desc_en = "Full-text search"
+  tag = "检索"
+  tag_en = "Search"
+  external = false
+
+[[items]]
+  group_zh = "本站"
+  group_en = "This site"
+  url = "/about/"
+  label_zh = "关于本站"
+  label_en = "About"
+  desc_zh = "这个站做什么、怎么联系"
+  desc_en = "What this site is"
   tag = "关于"
   tag_en = "About"
+  external = false
+
+# ---------- 我的其它站点 ----------
+[[items]]
+  group_zh = "我的其它站点"
+  group_en = "My other site"
+  url = "https://hkhenry.com/"
+  label_zh = "香港 Henry（hkhenry.com）"
+  label_en = "Hong Kong Henry (hkhenry.com)"
+  desc_zh = "海外账户 · 财富投资 · 工具技术的另一个站"
+  desc_en = "My other site: accounts, investing, tools"
+  tag = "外站"
+  tag_en = "Extern"
   external = true
 
+# ---------- 自媒体 ----------
 [[items]]
-  group_zh = "内容"
-  group_en = "Content"
-  url = "https://hkhenry.com/posts/"
-  label_zh = "全部文章"
-  label_en = "All posts"
-  desc_zh = "海外账户 · 财富投资 · 工具技术"
-  desc_en = "Accounts · Investing · Tools"
-  tag = "博客"
-  tag_en = "Blog"
-  external = true
-
-[[items]]
-  group_zh = "内容"
-  group_en = "Content"
-  url = "https://hkhenry.com/categories/"
-  label_zh = "分类浏览"
-  label_en = "Categories"
-  desc_zh = "11 个栏目，按主题找内容"
-  desc_en = "11 sections by topic"
-  tag = "分类"
-  tag_en = "Topics"
-  external = true
-
-[[items]]
-  group_zh = "内容"
-  group_en = "Content"
-  url = "https://hkhenry.com/tags/"
-  label_zh = "标签云"
-  label_en = "Tags"
-  desc_zh = "按关键词跳转"
-  desc_en = "Jump by keyword"
-  tag = "标签"
-  tag_en = "Tags"
-  external = true
-
-[[items]]
-  group_zh = "内容"
-  group_en = "Content"
-  url = "https://hkhenry.com/archives/"
-  label_zh = "时间线归档"
-  label_en = "Timeline archive"
-  desc_zh = "按时间翻全部历史内容"
-  desc_en = "Everything by date"
-  tag = "归档"
-  tag_en = "Archive"
-  external = true
-
-[[items]]
-  group_zh = "内容"
-  group_en = "Content"
-  url = "https://hkhenry.com/en/"
-  label_zh = "English 版"
-  label_en = "Chinese 版"
-  desc_zh = "英文站点（另有 ES 西语）"
-  desc_en = "English site (ES also live)"
-  tag = "多语言"
-  tag_en = "EN"
-  external = true
-
-[[items]]
-  group_zh = "视频与社群"
-  group_en = "Video & social"
+  group_zh = "自媒体"
+  group_en = "Channels"
   url = "https://www.youtube.com/@hkhenry21"
-  label_zh = "YouTube 频道"
+  label_zh = "YouTube"
   label_en = "YouTube"
-  desc_zh = "视频版内容与讲解"
-  desc_en = "Video walkthroughs"
+  desc_zh = "视频版内容"
+  desc_en = "Videos"
   tag = "视频"
   tag_en = "Video"
   external = true
 
 [[items]]
-  group_zh = "视频与社群"
-  group_en = "Video & social"
+  group_zh = "自媒体"
+  group_en = "Channels"
   url = "https://space.bilibili.com/482671086"
   label_zh = "哔哩哔哩"
   label_en = "Bilibili"
   desc_zh = "B 站同步更新"
-  desc_en = "B站 channel"
+  desc_en = "Bilibili channel"
   tag = "视频"
   tag_en = "Video"
   external = true
 
 [[items]]
-  group_zh = "视频与社群"
-  group_en = "Video & social"
+  group_zh = "自媒体"
+  group_en = "Channels"
   url = "https://v.douyin.com/nWv3zJSoC78/"
   label_zh = "抖音"
   label_en = "Douyin"
@@ -127,8 +116,8 @@
   external = true
 
 [[items]]
-  group_zh = "视频与社群"
-  group_en = "Video & social"
+  group_zh = "自媒体"
+  group_en = "Channels"
   url = "https://x.com/hkhenry21"
   label_zh = "X（推特）"
   label_en = "X (Twitter)"
@@ -139,13 +128,13 @@
   external = true
 
 [[items]]
-  group_zh = "视频与社群"
-  group_en = "Video & social"
+  group_zh = "自媒体"
+  group_en = "Channels"
   url = "https://t.me/hkhenry21"
   label_zh = "Telegram 频道"
   label_en = "Telegram"
   desc_zh = "公告与交流"
-  desc_en = "Announcements & chat"
+  desc_en = "Announcements"
   tag = "社群"
   tag_en = "Chat"
   external = true
